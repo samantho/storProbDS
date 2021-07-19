@@ -19,8 +19,16 @@ All functions are described below with their formulas and examples.
   - [Multinomial Coefficients](#multinomial-coefficients)
   - [Basic Sampling](#basic-sampling)
 - [**Conditional Probability**](#conditional-probability)
-- [**Random Variables**](#random-variables)
+- [**Discrete Random Variables**](#discrete-random-variables)
   - [Bernoulli Random Variable](#bernoulli-random-variable)
+  - [Binomial Random Variable](#binomial-random-variable)
+  - [Poisson Random Variable](#poisson-random-variable)
+  - [Geometric Random Variable](#geometric-random-variable)
+  - [Hypergeometric Random Variable](#hypergeometric-random-variable)
+- [**Continuous Random Variables**](#continuous-random-variables)
+  - [Exponential Random Variable](#exponential-random-variable)
+  - [Uniform Random Variable](#uniform-random-variable)
+  - [Normal Random Variable](#normal-random-variable)
 - [**Jointly Distributed Random Variables**](#jointly-distributed-random-variables)
 - [**Several Jointly Distributed Random Variables**](#several-jointly-distributed-random-variables)
 
@@ -43,9 +51,62 @@ All functions are described below with their formulas and examples.
 
 <br>
 
-## **Random Variables**
+## **Discrete Random Variables**
 
 ### Bernoulli Random Variable
+    Description
+    f(x) = 
+Example Problem
+
+`function` --> {Exp: , Var: , 0: , 1: }
+
+### Binomial Random Variable
+    Description
+    f(x) = 
+Example Problem
+
+`function` --> {Exp: , Var: , 0: , 1: }
+
+### Poisson Random Variable
+    Description
+    f(x) = 
+Example Problem
+
+`function` --> {Exp: , Var: , 0: , 1: }
+
+### Geometric Random Variable
+    Description
+    f(x) = 
+Example Problem
+
+`function` --> {Exp: , Var: , 0: , 1: }
+
+### Hypergeometric Random Variable
+    Description
+    f(x) = 
+Example Problem
+
+`function` --> {Exp: , Var: , 0: , 1: }
+
+<br>
+
+## **Continuous Random Variables**
+
+### Exponential Random Variable
+    Description
+    f(x) = 
+Example Problem
+
+`function` --> {Exp: , Var: , 0: , 1: }
+
+### Uniform Random Variable
+    Description
+    f(x) = 
+Example Problem
+
+`function` --> {Exp: , Var: , 0: , 1: }
+
+### Normal Random Variable
     Description
     f(x) = 
 Example Problem
