@@ -48,7 +48,7 @@ All functions are described below with their formulas and examples.
 ### Bernoulli Random Variable
     Description
     f(x) = 
-    Example Problem
+Example Problem
 `function` --> {Exp: , Var: , 0: , 1: }
 
 <br>
