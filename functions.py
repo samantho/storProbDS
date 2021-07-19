@@ -4,11 +4,6 @@ import math
 #################### Functions ####################
 
 
-# testing function
-def test_msg():
-    print("hello world")
-
-
 # Combination: n Choose k
 # binomial coefficient
 # number of ways to select k items out of n, order doesn't matter

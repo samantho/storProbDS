@@ -7,7 +7,6 @@ probs = {
     "B": 0.4
 }
 
-#test_msg()
 #n_choose_groups(n=5, [1, 2, 2])
 #basic_sample(n=5, k=3, ordered=False, replacement=True)
 #B(p=0.4)
