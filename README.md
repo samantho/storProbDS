@@ -47,9 +47,7 @@ All functions are described below with their formulas and examples.
 
 ### Bernoulli Random Variable
     Description
-$$
-f(x) = 
-$$
+    f(x) = 
     Example Problem
 `function` --> {Exp: , Var: , 0: , 1: }
 
