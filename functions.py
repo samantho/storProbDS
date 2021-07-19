@@ -1,8 +1,10 @@
+# Sam Anthony, 2021
+
 ####################  Imports  ####################
 import math
 
-#################### Functions ####################
 
+################## Basic Sampling #################
 
 # Combination: n Choose k
 # binomial coefficient
@@ -22,7 +24,7 @@ def perm(n, k):
 # permutations of n objects where there are n1, n2 ... nk repeated objs
 def n_choose_groups(n, n_list):
     if(sum(n_list) != n):
-        print("all group sizes must add to n" ,sum(n_list))
+        print("all group sizes must add to n, current add to", sum(n_list))
         return
     ways = math.factorial(n)
     for x in n_list:
@@ -42,9 +44,6 @@ def basic_sample(n, k, ordered, replacement):
         return choose(n, k)
     if(not ordered and not replacement):
         return choose(n + k - 1, k)
-
-##### possibly conditional probability
-
 
 
 

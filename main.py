@@ -7,7 +7,7 @@ probs = {
     "B": 0.4
 }
 
-#n_choose_groups(n=5, [1, 2, 2])
+#n_choose_groups(n=5, n_list=[1, 2, 2])
 #basic_sample(n=5, k=3, ordered=False, replacement=True)
 #B(p=0.4)
 #Bin(n=20, p=0.4, x=3)
