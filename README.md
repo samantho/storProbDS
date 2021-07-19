@@ -49,6 +49,7 @@ All functions are described below with their formulas and examples.
     Description
     f(x) = 
 Example Problem
+
 `function` --> {Exp: , Var: , 0: , 1: }
 
 <br>
