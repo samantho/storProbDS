@@ -5,6 +5,7 @@ import math
 
 
 
+
 ################## Basic Sampling #################
 
 # Combination: n Choose k
@@ -45,6 +46,7 @@ def basic_sample(n, k, ordered, replacement):
         return choose(n, k)
     if(not ordered and not replacement):
         return choose(n + k - 1, k)
+
 
 
 

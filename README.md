@@ -14,22 +14,9 @@ All functions are described below with their formulas and examples.
 
 **Table of Contents**
 - [**Basic Probability**](#basic-probability)
-  - [Combinations](#combinations)
-  - [Permutations](#permutations)
-  - [Multinomial Coefficients](#multinomial-coefficients)
-  - [Basic Sampling](#basic-sampling)
 - [**Conditional Probability**](#conditional-probability)
 - [**Discrete Random Variables**](#discrete-random-variables)
-  - [Discrete Random Variable](#discrete-random-variable)
-  - [Bernoulli Random Variable](#bernoulli-random-variable)
-  - [Binomial Random Variable](#binomial-random-variable)
-  - [Poisson Random Variable](#poisson-random-variable)
-  - [Geometric Random Variable](#geometric-random-variable)
-  - [Hypergeometric Random Variable](#hypergeometric-random-variable)
 - [**Continuous Random Variables**](#continuous-random-variables)
-  - [Exponential Random Variable](#exponential-random-variable)
-  - [Uniform Random Variable](#uniform-random-variable)
-  - [Normal Random Variable](#normal-random-variable)
 - [**Jointly Distributed Random Variables**](#jointly-distributed-random-variables)
 - [**Several Jointly Distributed Random Variables**](#several-jointly-distributed-random-variables)
 
@@ -41,10 +28,10 @@ All functions are described below with their formulas and examples.
 
 ## **Basic Probability**
 
-### Combinations
-### Permutations
-### Multinomial Coefficients
-### Basic Sampling
+### Combinations <!-- omit in toc -->
+### Permutations <!-- omit in toc -->
+### Multinomial Coefficients <!-- omit in toc -->
+### Basic Sampling <!-- omit in toc -->
 
 <br>
 
@@ -54,42 +41,42 @@ All functions are described below with their formulas and examples.
 
 ## **Discrete Random Variables**
 
-### Discrete Random Variable
+### Discrete Random Variable <!-- omit in toc -->
     Description
     f(x) = 
 Example Problem
 
 `function` --> {Exp: , Var: , 0: , 1: }
 
-### Bernoulli Random Variable
+### Bernoulli Random Variable <!-- omit in toc -->
     Description
     f(x) = 
 Example Problem
 
 `function` --> {Exp: , Var: , 0: , 1: }
 
-### Binomial Random Variable
+### Binomial Random Variable <!-- omit in toc -->
     Description
     f(x) = 
 Example Problem
 
 `function` --> {Exp: , Var: , 0: , 1: }
 
-### Poisson Random Variable
+### Poisson Random Variable <!-- omit in toc -->
     Description
     f(x) = 
 Example Problem
 
 `function` --> {Exp: , Var: , 0: , 1: }
 
-### Geometric Random Variable
+### Geometric Random Variable <!-- omit in toc -->
     Description
     f(x) = 
 Example Problem
 
 `function` --> {Exp: , Var: , 0: , 1: }
 
-### Hypergeometric Random Variable
+### Hypergeometric Random Variable <!-- omit in toc -->
     Description
     f(x) = 
 Example Problem
@@ -100,21 +87,21 @@ Example Problem
 
 ## **Continuous Random Variables**
 
-### Exponential Random Variable
+### Exponential Random Variable <!-- omit in toc -->
     Description
     f(x) = 
 Example Problem
 
 `function` --> {Exp: , Var: , 0: , 1: }
 
-### Uniform Random Variable
+### Uniform Random Variable <!-- omit in toc -->
     Description
     f(x) = 
 Example Problem
 
 `function` --> {Exp: , Var: , 0: , 1: }
 
-### Normal Random Variable
+### Normal Random Variable <!-- omit in toc -->
     Description
     f(x) = 
 Example Problem
