@@ -4,6 +4,7 @@
 import math
 
 
+
 ################## Basic Sampling #################
 
 # Combination: n Choose k
@@ -47,7 +48,7 @@ def basic_sample(n, k, ordered, replacement):
 
 
 
-################# Random Variables ################
+################# Discrete Random Variables ################
 # Each distribution's primary function returns: 
 #   dictionary of probability density function, expected value, and variance
 
@@ -56,6 +57,19 @@ def basic_sample(n, k, ordered, replacement):
 #       n is the number of trials
 #       x is the the value of that probability
 #       all will print the prob of all values 0 to n
+
+
+# --- Discrete Random Variable ---
+# finds the expected value and variance of a generic discrete random variable
+# Parameters: probs is a dictionary of the values and their probabilities
+def discrete(probs):
+    exp = 0
+    for x in probs:
+        exp += probs[x] * int(x)
+    var = 0
+    for x in probs:
+        var += math.pow(int(x) - exp, 2) * probs[x]
+    return {"E": exp, "Var": var}
 
 
 # --- Bernoulli Random Variable ---
@@ -85,9 +99,12 @@ def Bin(n, p, x=False, all=False):
             binomial.update({i: prob_of_x(i)})
     return binomial
 
+def MGF_Bin(n, p, t):
+    return math.pow((1 - p + p * math.pow(math.e, t)), n)
+
 
 # --- Poisson Random Variable ---
-# X takes values WHAT TO WHAT
+# X takes values
 # approximately binomial for large n, small p, where lambda = np
 # Parameters: mean or lambda is the mean number of events (> 0)
 #       time is the time range the events happened in [0, t]
@@ -103,3 +120,60 @@ def Pois(mean, time = 1, x = False, max = False):
         for i in range(max + 1):
             poisson.update({i: prob_of_x(i)})
     return poisson
+
+
+# --- Geometric Random Variable ---
+# X takes values
+# counts number of failed Bernoulli trials until first success
+# Parameters: p is the probability of success
+def Geom(p, x = False, max=False):
+    geometric = {"E": 1 / p, "Var": (1 - p) / math.pow(p, 2)}
+    def prob_of_x(x):
+        return math.pow(1 - p, x - 1) * p
+    if(type(x) == int or type(x) == float):
+        geometric.update({x: prob_of_x(x)})
+    if(max):
+        for i in range(max + 1):
+            geometric.update({i: prob_of_x(i)})
+    return geometric
+
+def MGF_Geom(p, t):
+    return (p * math.pow(math.e, t)) / (1 - (1 - p) * math.pow(math.e, t))
+
+
+# --- Hypergeometric Random Variable ---
+# X takes values
+# sample of size n selected without replacement from N objs
+#   where the N items have k successes and N-k failures
+# NOT binomial because the prob of success is different every trial
+# Parameters: n is the number of trials, N is the population, 
+#       k is the number of successes in population
+def Hgeom(N, n, k, x = False, max=False):
+    hypergeom = {"E": n * k / N, "Var": n * k * (N - k) * (N - n) / (N * N * (N - 1))}
+    def prob_of_x(x):
+        return choose(k, x) * choose(N - k, n - x) / choose(N, n)
+    if(type(x) == int or type(x) == float):
+        hypergeom.update({x: prob_of_x(x)})
+    if(max):
+        for i in range(max + 1):
+            hypergeom.update({i: prob_of_x(i)})
+    return hypergeom
+
+
+
+
+################# Continuous Random Variables ################
+# Each distribution's primary function returns: 
+#   dictionary of probability density function, expected value, and variance
+
+# Common parameters:
+#       p is the probability of the event occurring
+#       n is the number of trials
+#       x is the the value of that probability
+#       all will print the prob of all values 0 to n
+
+
+# --- Bernoulli Random Variable ---
+
+def B(p):
+    return {"E": p, "Var": p*(1-p), 0: 1-p, 1: p}

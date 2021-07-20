@@ -20,6 +20,7 @@ All functions are described below with their formulas and examples.
   - [Basic Sampling](#basic-sampling)
 - [**Conditional Probability**](#conditional-probability)
 - [**Discrete Random Variables**](#discrete-random-variables)
+  - [Discrete Random Variable](#discrete-random-variable)
   - [Bernoulli Random Variable](#bernoulli-random-variable)
   - [Binomial Random Variable](#binomial-random-variable)
   - [Poisson Random Variable](#poisson-random-variable)
@@ -52,6 +53,13 @@ All functions are described below with their formulas and examples.
 <br>
 
 ## **Discrete Random Variables**
+
+### Discrete Random Variable
+    Description
+    f(x) = 
+Example Problem
+
+`function` --> {Exp: , Var: , 0: , 1: }
 
 ### Bernoulli Random Variable
     Description
