@@ -32,4 +32,6 @@ probs = {
 
 
 # --- Continuous Random Variables ---
-
+#Exp(0.25, 5)
+#U(0, 10)
+print(Normal(1, 1, max=3))

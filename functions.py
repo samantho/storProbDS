@@ -51,14 +51,17 @@ def basic_sample(n, k, ordered, replacement):
 
 
 ################# Discrete Random Variables ################
+# these variables represent a countable number of values that
+#   result from a random event
+
 # Each distribution's primary function returns: 
 #   dictionary of probability density function, expected value, and variance
 
 # Common parameters:
-#       p is the probability of the event occurring
-#       n is the number of trials
-#       x is the the value of that probability
-#       all will print the prob of all values 0 to n
+#       p -    is the probability of the event occurring
+#       n -    is the number of trials
+#       x -    is the the value of that probability
+#       max -  will print the prob of all values 0 to n
 
 
 # --- Discrete Random Variable ---
@@ -90,13 +93,13 @@ def B_x_given_p(x, p, n=1):
 # frequency of an event in n of trials
 # the event must be bernoulli and the trials must be independent
 # Parameters: p is probability of the event, n is number of trials
-def Bin(n, p, x=False, all=False):
+def Bin(n, p, x=False, max=False):
     binomial = {"E": n*p, "Var": math.sqrt(n*p*(1-p))}   #, "EX^2": math.pow(n*p, 2) + (n * p * (1 - p))}
     def prob_of_x(x):
         return choose(n, x) * B_x_given_p(x, p, n)
     if(type(x) == int or type(x) == float):
         binomial.update({x: prob_of_x(x)})
-    if(all):
+    if(max):
         for i in range(n + 1):
             binomial.update({i: prob_of_x(i)})
     return binomial
@@ -165,17 +168,62 @@ def Hgeom(N, n, k, x = False, max=False):
 
 
 ################# Continuous Random Variables ################
+# these variables represent all values in an interval that
+#   result from a random event
+
 # Each distribution's primary function returns: 
 #   dictionary of probability density function, expected value, and variance
 
 # Common parameters:
-#       p is the probability of the event occurring
-#       n is the number of trials
-#       x is the the value of that probability
-#       all will print the prob of all values 0 to n
+#       p -    is the probability of the event occurring
+#       n -    is the number of trials
+#       x -    is the the value of that probability
+#       max -  will print the prob of all values 0 to n
 
 
-# --- Bernoulli Random Variable ---
+# --- Exponential Random Variable ---
+# models the time before an event occurs
+# distribution is memoryless
+# Parameters: y is the lambda value (rate) of the distribution
+def Exp(y, x = False, max=False, less_equal_t=False):
+    exponential = {"E": 1 / y, "Var": 1 / math.pow(y, 2)}
+    def prob_of_x(x):
+        return y * math.pow(math.e, -y * x)
+    if(type(x) == int or type(x) == float):
+        exponential.update({x: prob_of_x(x)})
+    if(max):
+        for i in range(max + 1):
+            exponential.update({i: prob_of_x(i)})
+    if(less_equal_t):
+        exponential.update({"P(X<=t)": 1 - math.pow(math.e, -y * less_equal_t)})
+    return exponential
 
-def B(p):
-    return {"E": p, "Var": p*(1-p), 0: 1-p, 1: p}
+
+# --- Uniform Random Variable ---
+# variable is uniformly distributed over interval from a to b
+# Parameters: all prints all probabilities in a to b range
+def U(a, b, x = False, all=False):
+    uniform = {"E": (a + b) / 2, "Var": math.pow(b - a, 2) / 12}
+    def prob_of_x(x):
+        return 1 / (b - a)
+    if(type(x) == int or type(x) == float):
+        uniform.update({x: prob_of_x(x)})
+    if(all):
+        for i in range(a, b + 1):
+            uniform.update({i: prob_of_x(i)})
+    return uniform
+
+
+# --- Normal Random Variable ---
+# Parameters: mean is the average of the distribution,
+#       var is the variance or standard deviation squared
+def Normal(mean, var, x = False, max=False):
+    normal = {"E": mean, "Var": var}
+    def prob_of_x(x):
+        return (1 / math.sqrt(2 * math.pi * var)) * math.pow(math.e, -math.pow(x - mean, 2) / (2 * var))
+    if(type(x) == int or type(x) == float):
+        normal.update({x: prob_of_x(x)})
+    if(max):
+        for i in range(max + 1):
+            normal.update({i: prob_of_x(i)})
+    return normal
